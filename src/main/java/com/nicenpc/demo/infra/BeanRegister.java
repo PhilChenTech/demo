@@ -1,9 +1,12 @@
 package com.nicenpc.demo.infra;
 
-import com.nicenpc.demo.adapter.member.out.db.MemberDaoImpl;
-import com.nicenpc.demo.domain.member.service.CreateMemberService;
-import com.nicenpc.demo.domain.member.service.CreateMemberServiceImpl;
-import com.nicenpc.demo.domain.member.service.MemberDao;
+import com.nicenpc.demo.domain.member.service.create.CreateMemberService;
+import com.nicenpc.demo.domain.member.service.create.CreateMemberServiceImpl;
+import com.nicenpc.demo.domain.member.service.MemberRepository;
+import com.nicenpc.demo.domain.member.service.findbyid.FindByIdMemberService;
+import com.nicenpc.demo.domain.member.service.findbyid.FindByIdMemberServiceImpl;
+import com.nicenpc.demo.domain.member.service.update.UpdateMemberService;
+import com.nicenpc.demo.domain.member.service.update.UpdateMemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -11,10 +14,20 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class BeanRegister {
-    private final MemberDao memberDao;
+    private final MemberRepository memberRepository;
 
     @Bean
-    public CreateMemberService getCreateMemberService(){
-        return new CreateMemberServiceImpl(memberDao);
+    public CreateMemberService getCreateMemberService() {
+        return new CreateMemberServiceImpl(memberRepository);
+    }
+
+    @Bean
+    public UpdateMemberService getUpdateMemberService() {
+        return new UpdateMemberServiceImpl(memberRepository);
+    }
+
+    @Bean
+    public FindByIdMemberService getFindByIdMemberService() {
+        return new FindByIdMemberServiceImpl(memberRepository);
     }
 }

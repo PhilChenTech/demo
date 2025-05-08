@@ -1,9 +1,9 @@
-package com.nicenpc.demo.adapter.member.in.controller;
+package com.nicenpc.demo.validator.member.create;
 
 import lombok.Data;
 
 @Data
-public class CreateMemberRequest {
+public class CreateMemberCommand {
     private String name;
     private Integer age;
     private String email;
