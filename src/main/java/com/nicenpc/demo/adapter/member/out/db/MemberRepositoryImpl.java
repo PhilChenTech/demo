@@ -9,26 +9,26 @@ import org.springframework.stereotype.Repository;
 @Repository
 @RequiredArgsConstructor
 public class MemberRepositoryImpl implements MemberRepository {
-    private final MemberEntityRepository memberEntityRepository;
+    private final MemberJpaRepository memberJpaRepository;
     private final MemberMapper memberMapper;
 
     @Override
     public Member create(Member member) {
         MemberEntity memberEntity = memberMapper.convert(member);
-        MemberEntity save = memberEntityRepository.save(memberEntity);
+        MemberEntity save = memberJpaRepository.save(memberEntity);
         return memberMapper.convert(save);
     }
 
     @Override
     public Member update(Member member) {
         MemberEntity memberEntity = memberMapper.convert(member);
-        MemberEntity save = memberEntityRepository.save(memberEntity);
+        MemberEntity save = memberJpaRepository.save(memberEntity);
         return memberMapper.convert(save);
     }
 
     @Override
     public Member findById(Long id) {
-        MemberEntity memberEntity = memberEntityRepository.findById(id).orElse(null);
+        MemberEntity memberEntity = memberJpaRepository.findById(id).orElse(null);
         return memberMapper.convert(memberEntity);
     }
 }
