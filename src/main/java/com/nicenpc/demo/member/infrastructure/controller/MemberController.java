@@ -4,7 +4,6 @@ import com.nicenpc.demo.member.application.create.CreateMemberApplicationService
 import com.nicenpc.demo.member.application.update.UpdateMemberApplicationService;
 import com.nicenpc.demo.member.infrastructure.controller.request.CreateMemberRequest;
 import com.nicenpc.demo.member.infrastructure.controller.request.UpdateMemberRequest;
-import com.nicenpc.demo.common.ApplicationService;
 import com.nicenpc.demo.member.application.create.CreateMemberCommand;
 import com.nicenpc.demo.member.application.update.UpdateMemberCommand;
 import lombok.RequiredArgsConstructor;
