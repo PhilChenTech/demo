@@ -1,7 +1,7 @@
-package com.nicenpc.demo.member.domain.member.service.create;
+package com.nicenpc.demo.member.domain.service.create;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.MemberRepository;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.MemberRepository;
 
 public class CreateMemberServiceImpl implements CreateMemberService {
     private final MemberRepository memberRepository;

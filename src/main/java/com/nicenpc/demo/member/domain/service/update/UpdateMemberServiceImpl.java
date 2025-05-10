@@ -1,7 +1,7 @@
-package com.nicenpc.demo.member.domain.member.service.update;
+package com.nicenpc.demo.member.domain.service.update;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.MemberRepository;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.MemberRepository;
 
 
 public class UpdateMemberServiceImpl implements UpdateMemberService {

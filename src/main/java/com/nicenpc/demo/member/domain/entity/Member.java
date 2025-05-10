@@ -1,4 +1,4 @@
-package com.nicenpc.demo.member.domain.member.entity;
+package com.nicenpc.demo.member.domain.entity;
 
 import lombok.Getter;
 import lombok.Setter;

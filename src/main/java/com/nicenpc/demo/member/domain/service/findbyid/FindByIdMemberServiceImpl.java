@@ -1,7 +1,7 @@
-package com.nicenpc.demo.member.domain.member.service.findbyid;
+package com.nicenpc.demo.member.domain.service.findbyid;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.MemberRepository;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.MemberRepository;
 
 
 public class FindByIdMemberServiceImpl implements FindByIdMemberService {

@@ -1,6 +1,6 @@
-package com.nicenpc.demo.member.domain.member.service;
+package com.nicenpc.demo.member.domain.service;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
+import com.nicenpc.demo.member.domain.entity.Member;
 
 public interface MemberRepository {
     Member create(Member member);

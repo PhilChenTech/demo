@@ -1,7 +1,7 @@
 package com.nicenpc.demo.member.application.create;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.create.CreateMemberService;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.create.CreateMemberService;
 import com.nicenpc.demo.common.ApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

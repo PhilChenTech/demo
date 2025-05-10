@@ -1,12 +1,12 @@
 package com.nicenpc.demo.common;
 
-import com.nicenpc.demo.member.domain.member.service.create.CreateMemberService;
-import com.nicenpc.demo.member.domain.member.service.create.CreateMemberServiceImpl;
-import com.nicenpc.demo.member.domain.member.service.MemberRepository;
-import com.nicenpc.demo.member.domain.member.service.findbyid.FindByIdMemberService;
-import com.nicenpc.demo.member.domain.member.service.findbyid.FindByIdMemberServiceImpl;
-import com.nicenpc.demo.member.domain.member.service.update.UpdateMemberService;
-import com.nicenpc.demo.member.domain.member.service.update.UpdateMemberServiceImpl;
+import com.nicenpc.demo.member.domain.service.create.CreateMemberService;
+import com.nicenpc.demo.member.domain.service.create.CreateMemberServiceImpl;
+import com.nicenpc.demo.member.domain.service.MemberRepository;
+import com.nicenpc.demo.member.domain.service.findbyid.FindByIdMemberService;
+import com.nicenpc.demo.member.domain.service.findbyid.FindByIdMemberServiceImpl;
+import com.nicenpc.demo.member.domain.service.update.UpdateMemberService;
+import com.nicenpc.demo.member.domain.service.update.UpdateMemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

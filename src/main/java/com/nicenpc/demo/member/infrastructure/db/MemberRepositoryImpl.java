@@ -1,7 +1,7 @@
 package com.nicenpc.demo.member.infrastructure.db;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.MemberRepository;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

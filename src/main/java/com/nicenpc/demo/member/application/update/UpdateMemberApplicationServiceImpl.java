@@ -1,8 +1,8 @@
 package com.nicenpc.demo.member.application.update;
 
-import com.nicenpc.demo.member.domain.member.entity.Member;
-import com.nicenpc.demo.member.domain.member.service.findbyid.FindByIdMemberService;
-import com.nicenpc.demo.member.domain.member.service.update.UpdateMemberService;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.domain.service.findbyid.FindByIdMemberService;
+import com.nicenpc.demo.member.domain.service.update.UpdateMemberService;
 import com.nicenpc.demo.common.ApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
