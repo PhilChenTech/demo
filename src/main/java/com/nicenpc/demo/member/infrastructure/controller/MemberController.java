@@ -1,23 +1,22 @@
 package com.nicenpc.demo.member.infrastructure.controller;
 
+import com.nicenpc.demo.member.application.create.CreateMemberApplicationService;
+import com.nicenpc.demo.member.application.update.UpdateMemberApplicationService;
 import com.nicenpc.demo.member.infrastructure.controller.request.CreateMemberRequest;
 import com.nicenpc.demo.member.infrastructure.controller.request.UpdateMemberRequest;
 import com.nicenpc.demo.common.ApplicationService;
 import com.nicenpc.demo.member.application.create.CreateMemberCommand;
 import com.nicenpc.demo.member.application.update.UpdateMemberCommand;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("member")
+@RequiredArgsConstructor
 public class MemberController {
-    private final ApplicationService<CreateMemberCommand, Long> createMemberCommandApplicationService;
-    private final ApplicationService<UpdateMemberCommand, Void> updateMemberCommandApplicationService;
-
-    public MemberController(ApplicationService<CreateMemberCommand, Long> createMemberCommandApplicationService, ApplicationService<UpdateMemberCommand, Void> updateMemberCommandApplicationService) {
-        this.createMemberCommandApplicationService = createMemberCommandApplicationService;
-        this.updateMemberCommandApplicationService = updateMemberCommandApplicationService;
-    }
+    private final CreateMemberApplicationService createMemberCommandApplicationService;
+    private final UpdateMemberApplicationService updateMemberCommandApplicationService;
 
     @PostMapping
     public ResponseEntity<Long> createMember(@RequestBody CreateMemberRequest createMemberRequest) {
@@ -31,11 +30,11 @@ public class MemberController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Long> updateMember(@PathVariable("id") Long id,@RequestBody UpdateMemberRequest updateMemberRequest) {
+    public ResponseEntity<Long> updateMember(@PathVariable("id") Long id, @RequestBody UpdateMemberRequest updateMemberRequest) {
         UpdateMemberCommand updateMemberCommand = new UpdateMemberCommand();
         updateMemberCommand.setId(id);
         updateMemberCommand.setName(updateMemberRequest.getName());
-       updateMemberCommandApplicationService.execute(updateMemberCommand);
+        updateMemberCommandApplicationService.execute(updateMemberCommand);
         return ResponseEntity.ok().build();
     }
 }

@@ -1,6 +1,5 @@
 package com.nicenpc.demo.member.application.create;
 
-import com.nicenpc.demo.common.ApplicationService;
 import com.nicenpc.demo.member.domain.entity.Member;
 import com.nicenpc.demo.member.infrastructure.db.MemberDao;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service("CreateMemberApplicationServiceImpl")
 @RequiredArgsConstructor
-public class CreateMemberApplicationServiceImpl implements ApplicationService<CreateMemberCommand, Long> {
+public class CreateMemberApplicationServiceImpl implements CreateMemberApplicationService {
 
     private final MemberDao memberDao;
 

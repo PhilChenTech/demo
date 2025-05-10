@@ -1,18 +1,18 @@
 package com.nicenpc.demo.member.application.update;
 
 import com.nicenpc.demo.member.domain.entity.Member;
-import com.nicenpc.demo.common.ApplicationService;
 import com.nicenpc.demo.member.infrastructure.db.MemberDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service("UpdateMemberApplicationServiceImpl")
+@Service
 @RequiredArgsConstructor
-public class UpdateMemberApplicationServiceImpl implements ApplicationService<UpdateMemberCommand, Void> {
+public class UpdateMemberApplicationServiceImpl implements UpdateMemberApplicationService {
 
     private final MemberDao memberDao;
+
     @Override
-    public Void execute(UpdateMemberCommand command) {
+    public void execute(UpdateMemberCommand command) {
 
         Member member = memberDao.findById(command.getId());
         if (member == null) {
@@ -20,6 +20,5 @@ public class UpdateMemberApplicationServiceImpl implements ApplicationService<Up
         }
         member.setName(command.getName());
         memberDao.update(member);
-        return null;
     }
 }
