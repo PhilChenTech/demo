@@ -1,14 +1,13 @@
 package com.nicenpc.demo.member.infrastructure.db;
 
 import com.nicenpc.demo.member.domain.entity.Member;
-import com.nicenpc.demo.member.domain.service.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 
 @Repository
 @RequiredArgsConstructor
-public class MemberRepositoryImpl implements MemberRepository {
+public class MemberDaoImpl implements MemberDao {
     private final MemberJpaRepository memberJpaRepository;
     private final MemberMapper memberMapper;
 

@@ -1,8 +1,8 @@
 package com.nicenpc.demo.member.application.create;
 
-import com.nicenpc.demo.member.domain.entity.Member;
-import com.nicenpc.demo.member.domain.service.create.CreateMemberService;
 import com.nicenpc.demo.common.ApplicationService;
+import com.nicenpc.demo.member.domain.entity.Member;
+import com.nicenpc.demo.member.infrastructure.db.MemberDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CreateMemberApplicationServiceImpl implements ApplicationService<CreateMemberCommand, Long> {
 
-    private final CreateMemberService createMemberService;
+    private final MemberDao memberDao;
 
     @Override
     public Long execute(CreateMemberCommand command) {
@@ -20,6 +20,6 @@ public class CreateMemberApplicationServiceImpl implements ApplicationService<Cr
         member.setEmail(command.getEmail());
         member.setPhone(command.getPhone());
         member.setEnabled(true);
-        return createMemberService.createMember(member);
+        return memberDao.create(member).getId();
     }
 }

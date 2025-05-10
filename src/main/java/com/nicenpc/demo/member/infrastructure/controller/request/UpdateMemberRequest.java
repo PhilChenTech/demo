@@ -1,4 +1,4 @@
-package com.nicenpc.demo.member.infrastructure.controller.rq;
+package com.nicenpc.demo.member.infrastructure.controller.request;
 
 import lombok.Data;
 
